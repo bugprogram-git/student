@@ -6,20 +6,25 @@
 git clone +远程仓库的地址(将远程仓库的文件拷贝一份到本地)
 git init 默认在当前目录下创建一个git文件夹(即将当前目录创建成为git仓库),也可以指定仓库名,即在当前目录创建文件夹并将其初始化成为git仓库
 首次初始化仓库,必须至少commit一次,才能创建master分支,首次初始化无分支
+
 3.将工作区文件加入暂存区
 git add .(此命令默认将当前工作区的所有文件加入暂存区)
 若加入暂存区后想撤销操作,可以使用git reset HEAD(此命令会将当前分支的暂存区目录树进行重写,但是工作区不受影响)
 git rm --cache <file>删除暂存区的指定文件
 git checkout .或者git checkout --<file>会将暂存区的所有文件或者是指定文件替换工作区的所有或者是指定文件
+
 4.将暂存区的文件加入版本库
 git commit -m "commit message"将暂存区的文件加入版本库,git reset --hard+版本号,将当前版本回退到指定的commit版本
 git log 查看提交历史(git log --graph --pretty=format"%h %s")(图形化查看提交历史)
+
 5.git status检测工作区的文件变化,git rm删除工作区的指定文件 git remote查看远程仓库(可以指定-v参数查看其url地址)
 git remote add repostory_name https://github.com/bugprogram-git/student.git添加远程仓库
 git pull repostory_name master将远程仓库的master版本更新到本地
 git push repostory_name master将本地仓库的版本推送到远程仓库
+
 6.git rebase
 若想将本地的commit历史合并,则可以git rebase -i HEAD~num(num为最近的次数)
+
 7.如果commit历史出现了交叉,如果想将其合并到主分支6.git rebase
 若想将本地的commit历史合并,则可以git rebase -i HEAD~num(num为最近的次数)
 如果本地远程的commit出现交叉,则可以通过git fetch拉取远程的版本,然后git rebase orgin/main 进行合并,这样可以让版本不会出现交叉
