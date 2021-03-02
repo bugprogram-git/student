@@ -439,7 +439,6 @@ void load() //加载数据库文件函数
 }
 int main()
 {
-    printf("%d", sizeof(linklist));
     putchar('\n');
     while (1)
     {
